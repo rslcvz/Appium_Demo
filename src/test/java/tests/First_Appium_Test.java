@@ -28,6 +28,8 @@ public class First_Appium_Test {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        driver.closeApp();
+        driver.quit();
 
     }
 }
