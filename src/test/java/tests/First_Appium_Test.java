@@ -5,8 +5,10 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import javax.print.attribute.standard.PagesPerMinute;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class First_Appium_Test {
 
@@ -28,8 +30,16 @@ public class First_Appium_Test {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        driver.closeApp();
-        driver.quit();
 
+//        driver.findElementByXPath("//*[@text='Favorites']").click();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        driver.findElementById("com.etsy.android:id/search_src_text").sendKeys("shoes");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        driver.findElementById("c856d3e6-f967-4da3-98d2-4b5d955c08a9").click();
+        driver.findElementById("com.etsy.android:id/btn_link").click();
+
+        driver.findElementById("com.etsy.android:id/edit_username").sendKeys("rslceviz@gmail.com");
+        driver.findElementById("com.etsy.android:id/edit_password").sendKeys("691691691r");
+        driver.findElementById("com.etsy.android:id/button_signin").click();
     }
 }
